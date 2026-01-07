@@ -1,17 +1,18 @@
 [
   {
-    "name": "",
-    "age": 0,
-    "photo": "url"
+    "name": "Ian Somerhalder", 
+    "age": 47,
+    "photo": "https://nepalearn.com/wp-content/uploads/2023/10/image-4.png"
   },
   {
-    "name": "",
-    "age": 0,
-    "photo": "url"
+    "name": "Joseph Morgan",
+
+    "age": 45,
+    "photo": "https://i.pinimg.com/736x/7b/a5/a3/7ba5a389f37a349307e2397f46b63f6a.jpg"
   },
   {
-    "name": "",
-    "age": 0,
-    "photo": "url"
+    "name": "Theo James",
+    "age": 42,
+    "photo": "https://1.bp.blogspot.com/-bbweTQbD47o/WBOwq_rikSI/AAAAAAAAIGU/w-22KDb5bnoXgJRNw93ib82-YMqX2gO4wCLcB/s1600/tobias.jpg"
   }
 ]

@@ -72,3 +72,41 @@ btnReset.onclick = () => {
     seconds = 0;
     secondBlock.textContent = seconds;
 }
+
+
+const data = new XMLHttpRequest()
+data.open('GET', '../data/characters.json');
+data.setRequestHeader('Content-Type', 'application/json');
+data.send()
+data.onload = () => {
+const characters = JSON.parse(data.response);
+renderCard(characters);
+}
+
+const renderCard = (characters) => {
+    const characterList = document.querySelector('.characters-list');
+
+    characters.forEach(character => {
+        const div = document.createElement('div');
+        div.className = 'character-card';
+
+        div.innerHTML = `
+      <div>
+        <div class="character-photo">
+        <img src="${character.photo}" alt="">
+        </div>
+        <h3>${character.name}</h3>
+        <h5>${character.age}</h5>
+       </div>
+    `;
+        characterList.appendChild(div);
+    })
+}
+
+const bio = new XMLHttpRequest()
+bio.open('GET', '../data/bio.json');
+bio.setRequestHeader('Content-Type', 'application/json');
+bio.send()
+bio.onload = () => {
+    console.log(bio.response);
+}
