@@ -90,3 +90,44 @@ const convertor = (element) => {
 convertor(somInput);
 convertor(usdInput);
 convertor(eurInput);
+
+
+
+const btnNext = document.querySelector("#btn-next")
+const btnPrev = document.querySelector("#btn-prev")
+const card = document.querySelector(".card")
+let cardId = 1
+
+function getData(id) {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${cardId}`)
+        .then(res => res.json())
+        .then(data => {
+            const {title, id,completed} = data;
+            card.innerHTML = `
+            <p>${title}</p>
+            <p>${completed}</p>
+            <span> ${id}</span>
+            `
+        })
+}
+btnNext.onclick = () => {
+    cardId = cardId >= 200 ? 1 : cardId +1;
+    getData(cardId)
+}
+
+btnPrev.onclick = () => {
+    cardId = cardId <= 1 ? 200 : cardId - 1;
+    getData(cardId)
+}
+getData()
+
+
+
+function getPosts() {
+    fetch(`https://jsonplaceholder.typicode.com/posts`)
+        .then(res => res.json())
+        .then(data => {
+        console.log(data)
+    })
+}
+getPosts()
